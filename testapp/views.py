@@ -13,3 +13,7 @@ def add_movie_view(request):
             form.save()
         return home_view(request)
     return render(request,'testapp/addmovies.html',{'form':form})
+
+def list_movies_view(request):
+    movies_list = Movie.objects.all()
+    return render(request,'testapp/listmovies.html',{'movies_list':movies_list})
